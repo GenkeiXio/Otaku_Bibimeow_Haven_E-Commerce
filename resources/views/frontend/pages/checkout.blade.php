@@ -361,14 +361,14 @@
                                     <h2>CART  TOTALS</h2>
                                     <div class="content">
                                         <ul>
-										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>${{number_format(Helper::totalCartPrice(),2)}}</span></li>
+										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Cart Subtotal<span>₱{{number_format(Helper::totalCartPrice(),2)}}</span></li>
                                             <li class="shipping">
                                                 Shipping Cost
                                                 @if(count(Helper::shipping())>0 && Helper::cartCount()>0)
                                                     <select name="shipping" class="nice-select">
                                                         <option value="">Select your address</option>
                                                         @foreach(Helper::shipping() as $shipping)
-                                                        <option value="{{$shipping->id}}" class="shippingOption" data-price="{{$shipping->price}}">{{$shipping->type}}: ${{$shipping->price}}</option>
+                                                        <option value="{{$shipping->id}}" class="shippingOption" data-price="{{$shipping->price}}">{{$shipping->type}}: ₱{{$shipping->price}}</option>
                                                         @endforeach
                                                     </select>
                                                 @else 
@@ -386,9 +386,9 @@
                                                 }
                                             @endphp
                                             @if(session('coupon'))
-                                                <li class="last"  id="order_total_price">Total<span>${{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>₱{{number_format($total_amount,2)}}</span></li>
                                             @else
-                                                <li class="last"  id="order_total_price">Total<span>${{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>₱{{number_format($total_amount,2)}}</span></li>
                                             @endif
                                         </ul>
                                     </div>
