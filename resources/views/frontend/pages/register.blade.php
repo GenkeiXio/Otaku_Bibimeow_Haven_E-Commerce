@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || Register Page')
+@section('title','Otaku Haven || Register Page')
 
 @section('main-content')
 	<!-- Breadcrumbs -->
@@ -73,9 +73,8 @@
                                         <button class="btn" type="submit">Register</button>
                                         <a href="{{route('login.form')}}" class="btn">Login</a>
                                         OR
-                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook"><i class="ti-facebook"></i></a>
-                                        <a href="{{route('login.redirect','github')}}" class="btn btn-github"><i class="ti-github"></i></a>
-                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>
+                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook" style="background-color: #4267B2;" ><i class="ti-facebook"></i></a>
+                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google" style="background-color: #DC4A38;"><i class="ti-google"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -95,21 +94,20 @@
         margin-right:0;
     }
     .btn-facebook{
-        background:#39579A;
+        background-color: #4267B2;
+        padding-left: 65px !important;
+        padding-right: 65px !important;
+        justify-content: center;
     }
     .btn-facebook:hover{
         background:#073088 !important;
     }
-    .btn-github{
-        background:#444444;
-        color:white;
-    }
-    .btn-github:hover{
-        background:black !important;
-    }
     .btn-google{
-        background:#ea4335;
+        background-color: #DC4A38;
         color:white;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+        justify-content: center;
     }
     .btn-google:hover{
         background:rgb(243, 26, 26) !important;

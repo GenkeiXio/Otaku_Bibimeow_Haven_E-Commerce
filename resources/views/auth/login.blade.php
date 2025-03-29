@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>E-SHOP || Login Page</title>
+  <title>Otaku Haven || Login Page</title>
   @include('backend.layouts.head')
 
 </head>
@@ -20,7 +20,9 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block">
+                <img src="{{ asset('backend/img/logo/OIP.jpg') }}" alt="Login Image" class="img-fluid">
+              </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">

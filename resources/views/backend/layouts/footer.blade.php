@@ -3,7 +3,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <a href="https://github.com/Prajwal100" target="_blank">Prajwal R.</a> {{date('Y')}}</span>
+            <span><p>Copyright © {{date('Y')}} <a href="https://www.facebook.com/BibimeowOtakuHaven" target="_blank">Otaku Haven</a>  -  All Rights Reserved.</p></span>
           </div>
         </div>
       </footer>

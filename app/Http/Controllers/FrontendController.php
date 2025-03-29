@@ -44,6 +44,18 @@ class FrontendController extends Controller
         return view('frontend.pages.about-us');
     }
 
+    public function FAQ(){
+        return view('frontend.pages.faq');
+    }
+
+    public function Terms(){
+        return view('frontend.pages.terms');
+    }
+
+    public function Privacy(){
+        return view('frontend.pages.privacy');
+    }
+
     public function contact(){
         return view('frontend.pages.contact');
     }
