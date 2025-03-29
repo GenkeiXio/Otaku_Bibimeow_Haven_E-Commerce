@@ -1,107 +1,170 @@
 @extends('frontend.layouts.master')
-@section('title','E-SHOP || HOME PAGE')
+@section('title','Otaku Haven || HOME PAGE')
 @section('main-content')
-<!-- Slider Area -->
-@if(count($banners)>0)
-    <section id="Gslider" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            @foreach($banners as $key=>$banner)
-        <li data-target="#Gslider" data-slide-to="{{$key}}" class="{{(($key==0)? 'active' : '')}}"></li>
-            @endforeach
 
-        </ol>
-        <div class="carousel-inner" role="listbox">
-                @foreach($banners as $key=>$banner)
-                <div class="carousel-item {{(($key==0)? 'active' : '')}}">
-                    <img class="first-slide" src="{{$banner->photo}}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block text-left">
-                        <h1 class="wow fadeInDown">{{$banner->title}}</h1>
-                        <p>{!! html_entity_decode($banner->description) !!}</p>
-                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Shop Now<i class="far fa-arrow-alt-circle-right"></i></i></a>
+<!-- Carousel Section Begin -->
+ <section class="carousel-section" style="margin-top: 15px; margin-bottom: 50px;">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="2500">
+            <div class="carousel-inner">
+                <!-- Genshin Impact Banner Slide -->
+                <div class="carousel-item selected">
+                    <div class="genshin-banner">
+                        <div class="text-content">
+                            <h6>
+                                <img src="{{ asset('frontend/img/logo/pyro.png') }}" alt="Pyro Logo" class="category-logo">
+                                 Genshin Impact Figure
+                            </h6>
+                            <h2>Childe Genshin Impact Acrylic stand</h2>
+                            <a href="{{ route('product-detail', 'childe-genshin-impact-acrylic-stand') }}" class="shop-now">Shop Now →</a>
+                        </div>
+                        <div class="image-content">
+                            <img class="genshin-image" src="{{ asset('frontend/img/product/AS1.1.png') }}" alt="Genshin Impact Figure">
+                        </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
-        <a class="carousel-control-prev" href="#Gslider" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#Gslider" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
-    </section>
-@endif
 
-<!--/ End Slider Area -->
-
-<!-- Start Small Banner  -->
-<section class="small-banner section">
-    <div class="container-fluid">
-        <div class="row">
-            @php
-            $category_lists=DB::table('categories')->where('status','active')->limit(3)->get();
-            @endphp
-            @if($category_lists)
-                @foreach($category_lists as $cat)
-                    @if($cat->is_parent==1)
-                        <!-- Single Banner  -->
-                        <div class="col-lg-4 col-md-6 col-12">
-                            <div class="single-banner">
-                                @if($cat->photo)
-                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
-                                @else
-                                    <img src="https://via.placeholder.com/600x370" alt="#">
-                                @endif
-                                <div class="content">
-                                    <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
-                                </div>
-                            </div>
+                <div class="carousel-item">
+                    <div class="genshin-banner">
+                        <div class="text-content">
+                            <h6>
+                                <img src="{{ asset('frontend/img/logo/pyro.png') }}" alt="Pyro Logo" class="category-logo">
+                                Genshin Impact Cosplay Hoodie
+                            </h6>
+                            <h2>Genshin Impact Hutao Cosplay Hoodie</h2>
+                            <a href="{{ route('product-detail', 'huta-genshin-impact-cosplay-hoodie') }}" class="shop-now">Shop Now →</a>
                         </div>
-                    @endif
-                    <!-- /End Single Banner  -->
-                @endforeach
-            @endif
-        </div>
-    </div>
-</section>
-<!-- End Small Banner -->
+                        <div class="image-content">
+                            <img class="genshin-image" src="{{ asset('frontend/img/product/H-Huta.png') }}" alt="Genshin Impact Figure">
+                        </div>
+                    </div>
+                </div>
 
-<!-- Start Product Area -->
-<div class="product-area section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h2>Trending Item</h2>
+                <div class="carousel-item">
+                    <div class="genshin-banner">
+                        <div class="text-content">
+                            <h6>
+                                <img src="{{ asset('frontend/img/logo/pyro.png') }}" alt="Pyro Logo" class="category-logo">
+                                Genshin Impact Button Pin Badge
+                            </h6>
+                            <h2>TinPlate Pins Bag Badge Brooch</h2>
+                            <a href="{{ route('product-grids') }}" class="shop-now">Shop Now →</a>
+                        </div>
+                        <div class="image-content">
+                            <img class="genshin-image" src="{{ asset('frontend/img/product/sekiro_death.png') }}" alt="Genshin Impact Figure">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="genshin-banner">
+                        <div class="text-content">
+                            <h6>
+                                <img src="{{ asset('frontend/img/logo/pyro.png') }}" alt="Pyro Logo" class="category-logo">
+                                Genshin Impact Keqing Opulent Splendor
+                            </h6>
+                            <h2>Keqing New Skin Cosplay Costume</h2>
+                            <a href="{{ route('product-detail', 'genshin-impact-cosplay-keqing-new-skin-cosplay-costume') }}" class="shop-now">Shop Now →</a>
+                        </div>
+                        <div class="image-content">
+                            <img class="genshin-image" src="{{ asset('frontend/img/product/Keqing_Opulent.png') }}" alt="Genshin Impact Figure">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Carousel Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleControls" data-slide-to="0" class="selected"></li>
+                <li data-target="#carouselExampleControls" data-slide-to="1" ></li>
+                <li data-target="#carouselExampleControls" data-slide-to="2" ></li>
+                <li data-target="#carouselExampleControls" data-slide-to="3" ></li>
+            </ol>
+        </div>
+    </section>
+<!-- Carousel Section End -->
+
+<!-- Category Section Begin -->
+    <div class="label-container">
+        <div class="label-icon"></div>
+        <span>Categories</span>
+    </div>
+
+    <section class="product spad">
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-between">
+            <div class="col-auto">
+                <div class="shop-section-title" style="margin-bottom: 30px;">
+                    <h3>Browse by Category</h3>
+                </div>
+            </div>
+            <div class="col-auto">
+                <a href="{{route('product-grids')}}">
+                    <button class="view-all-btn text-white px-4 py-2 rounded">View All</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="custom-category-wrapper">
+            <div class="custom-category-list">
+                <a href="{{ route('product-cat', 'keychain') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/keychain-logo.png') }}" alt="Keychain">
+                    <span>Keychain</span>
+                </a>
+                <a href="{{ route('product-cat', 'tote-bags') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/tote bag logo.png') }}" alt="Tote Bags">
+                    <span>Tote Bags</span>
+                </a>
+                <a href="{{ route('product-cat', 'hoodies') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/hoodies.png') }}" alt="Hoodies">
+                    <span>Hoodies</span>
+                </a>
+                <a href="{{ route('product-cat', 'eyemask') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/eyemask.png') }}" alt="Eyemask">
+                    <span>Eyemask</span>
+                </a>
+                <a href="{{ route('product-cat', 'plush-toys') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/bunny-logo.png') }}" alt="Plush Toys">
+                    <span>Plush Toys</span>
+                </a>
+                <a href="{{ route('product-cat', 'footwear') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/footwear-logo.png') }}" alt="Footwear">
+                    <span>Footwear</span>
+                </a>
+                <a href="{{ route('product-cat', 't-shirts-2503283106-187') }}" class="custom-category-item">
+                    <img src="{{ asset('frontend/img/logo/tshirt-logo.png') }}" alt="T-Shirt">
+                    <span>T-Shirt</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+<!-- Category Section End -->
+
+<!-- Start Product Area -->
+<div class="product-area section">
+
+        <div class="label-container">
+            <div class="label-icon"></div>
+            <span>Our Products</span>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12 d-flex justify-content-between align-items-center">
+                    <div class="shop-section-title">
+                        <h3>Explore Our Products</h3>
+                    </div>
+                    <div>
+                        <a href="{{ route('product-grids') }}">
+                            <button class="view-all-btn text-white px-4 py-2 rounded">View All</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-12">
                     <div class="product-info">
-                        <div class="nav-main">
-                            <!-- Tab Nav -->
-                            <ul class="nav nav-tabs filter-tope-group" id="myTab" role="tablist">
-                                @php
-                                    $categories=DB::table('categories')->where('status','active')->where('is_parent',1)->get();
-                                    // dd($categories);
-                                @endphp
-                                @if($categories)
-                                <button class="btn" style="background:black"data-filter="*">
-                                    All Products
-                                </button>
-                                    @foreach($categories as $key=>$cat)
-
-                                    <button class="btn" style="background:none;color:black;"data-filter=".{{$cat->id}}">
-                                        {{$cat->title}}
-                                    </button>
-                                    @endforeach
-                                @endif
-                            </ul>
-                            <!--/ End Tab Nav -->
-                        </div>
                         <div class="tab-content isotope-grid" id="myTabContent">
                              <!-- Start Single Tab -->
                             @if($product_lists)
@@ -167,41 +230,39 @@
 {{-- @php
     $featured=DB::table('products')->where('is_featured',1)->where('status','active')->orderBy('id','DESC')->limit(1)->get();
 @endphp --}}
-<!-- Start Midium Banner  -->
-<section class="midium-banner">
-    <div class="container">
-        <div class="row">
-            @if($featured)
-                @foreach($featured as $data)
-                    <!-- Single Banner  -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="single-banner">
-                            @php
-                                $photo=explode(',',$data->photo);
-                            @endphp
-                            <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                            <div class="content">
-                                <p>{{$data->cat_info['title']}}</p>
-                                <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
-                                <a href="{{route('product-detail',$data->slug)}}">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /End Single Banner  -->
-                @endforeach
-            @endif
+
+<!-- Category Section Begin -->
+<div class="game-banner">
+        <div class="game-text-content">
+            <p>Categories</p>
+            <h2>Enhance Your Game Experience</h2>
+            <div class="game-timer">
+                <div><strong>23</strong><br>Hours</div>
+                <div><strong>05</strong><br>Days</div>
+                <div><strong>59</strong><br>Minutes</div>
+                <div><strong>35</strong><br>Seconds</div>
+            </div>
+            <a href="{{route('product-grids')}}" class="game-btn">Buy Now!</a>
+        </div>
+        <div class="game-image-content">
+            <img src="{{ asset('frontend/img/product/playmat.png') }}" alt="Game Cards">
         </div>
     </div>
-</section>
-<!-- End Midium Banner -->
+<!-- Category Section End -->
 
 <!-- Start Most Popular -->
+
 <div class="product-area most-popular section">
+    <div class="label-container">
+        <div class="label-icon"></div>
+        <span>This Month</span>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="section-title">
-                    <h2>Hot Item</h2>
+                <div class="shop-section-title">
+                    <h3>Hot Items</h3>
                 </div>
             </div>
         </div>
@@ -254,14 +315,20 @@
 <!-- End Most Popular Area -->
 
 <!-- Start Shop Home List  -->
+
 <section class="shop-home-list section">
+    <div class="label-container">
+        <div class="label-icon"></div>
+        <span>Featured</span>
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-12">
                 <div class="row">
                     <div class="col-12">
                         <div class="shop-section-title">
-                            <h1>Latest Items</h1>
+                            <h3>New Arrival</h3>
                         </div>
                     </div>
                 </div>
@@ -303,39 +370,6 @@
 </section>
 <!-- End Shop Home List  -->
 
-<!-- Start Shop Blog  -->
-<section class="shop-blog section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-title">
-                    <h2>From Our Blog</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @if($posts)
-                @foreach($posts as $post)
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <!-- Start Single Blog  -->
-                        <div class="shop-single-blog">
-                            <img src="{{$post->photo}}" alt="{{$post->photo}}">
-                            <div class="content">
-                                <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
-                                <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
-                                <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
-                            </div>
-                        </div>
-                        <!-- End Single Blog  -->
-                    </div>
-                @endforeach
-            @endif
-
-        </div>
-    </div>
-</section>
-<!-- End Shop Blog  -->
-
 <!-- Start Shop Services Area -->
 <section class="shop-services section home">
     <div class="container">
@@ -345,7 +379,7 @@
                 <div class="single-service">
                     <i class="ti-rocket"></i>
                     <h4>Free shiping</h4>
-                    <p>Orders over $100</p>
+                    <p>Orders over P500</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -381,7 +415,6 @@
 </section>
 <!-- End Shop Services Area -->
 
-@include('frontend.layouts.newsletter')
 
 <!-- Modal -->
 @if($product_lists)
@@ -518,49 +551,31 @@
 <!-- Modal end -->
 @endsection
 
-@push('styles')
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5f2e5abf393162001291e431&product=inline-share-buttons' async='async'></script>
-    <style>
-        /* Banner Sliding */
-        #Gslider .carousel-inner {
-        background: #000000;
-        color:black;
-        }
-
-        #Gslider .carousel-inner{
-        height: 550px;
-        }
-        #Gslider .carousel-inner img{
-            width: 100% !important;
-            opacity: .8;
-        }
-
-        #Gslider .carousel-inner .carousel-caption {
-        bottom: 60%;
-        }
-
-        #Gslider .carousel-inner .carousel-caption h1 {
-        font-size: 50px;
-        font-weight: bold;
-        line-height: 100%;
-        color: #F7941D;
-        }
-
-        #Gslider .carousel-inner .carousel-caption p {
-        font-size: 18px;
-        color: black;
-        margin: 28px 0 28px 0;
-        }
-
-        #Gslider .carousel-indicators {
-        bottom: 70px;
-        }
-    </style>
-@endpush
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+    let items = document.querySelectorAll(".carousel-item");
+    let indicators = document.querySelectorAll(".carousel-indicators li");
+
+    // Ensure Bootstrap 5 still recognizes the selected slide
+    items[0].classList.add("active"); // Bootstrap requirement
+    indicators[0].classList.add("active");
+
+    // Listen for slide events and switch class
+    let carousel = document.querySelector("#carouselExampleControls");
+    carousel.addEventListener("slide.bs.carousel", function (event) {
+        items.forEach(item => item.classList.remove("selected"));
+        indicators.forEach(ind => ind.classList.remove("selected"));
+
+        items[event.to].classList.add("selected");
+        indicators[event.to].classList.add("selected");
+    });
+});
+</script>
+
     <script>
 
         /*==================================================================
@@ -634,3 +649,258 @@
     </script>
 
 @endpush
+
+<style>
+
+.footer {
+    margin-top: 100px;
+}
+/*---------------------
+  CAROUSEL
+-----------------------*/
+  .carousel-section {
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px; 
+  }
+  
+  .carousel-indicators li {
+    background-color: #C4C4C4;
+    opacity: 50%;
+    width: 18px!important;
+    height: 5px; 
+  }
+
+  .carousel-indicators .selected {
+    background-color: #db4444 !important;
+  }
+
+  /* Genshin Impact Banner Styling */
+  .genshin-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    padding: 40px;
+    height: 370px;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .category-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 8px; /* Add spacing between logo and text */
+    vertical-align: middle;
+}
+
+
+  .text-content {
+    flex: 1;
+    padding-left: 50px;
+  }
+
+  .text-content h6 {
+    font-size: 14px;
+    color: #ff4444;
+    margin-bottom: 10px;
+  }
+
+  .text-content h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  .shop-now {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .shop-now:hover {
+    text-decoration: none;
+    color: #E07575;
+  }
+
+  .image-content {
+    flex: 1;
+    text-align: right;
+  }
+
+  .genshin-image {
+    width: auto;
+    height: auto;
+  }
+
+/*---------------------
+  LITTE TITLE
+-----------------------*/
+
+.label-container {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #DB4444; /* Adjusted to match the red shade */
+    margin-bottom: 50px;
+    }
+
+    .label-icon {
+        width: 12px;
+        height: 24px;
+        background-color: #DB4444;
+        border-radius: 4px;
+        margin-right: 8px;
+        margin-left: 100px;
+    }
+
+/*---------------------
+  CATEGORES
+-----------------------*/
+.custom-category-container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.custom-category-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.view-all-btn {
+    background-color: #DB4444;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    align-self: flex-end; /* Aligns button to the end */
+}
+
+.view-all-btn:hover {
+    background-color: #e07575;
+}
+
+.custom-category-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add some spacing */
+}
+
+.custom-category-list {
+    display: flex;
+    gap: 30px; /* Space between items */
+}
+
+.custom-category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    width: 120px;
+    text-align: center;
+}
+
+.custom-category-item:hover {
+    box-shadow: #e07575;
+    background-color: #E07575;
+}
+
+.custom-category-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.custom-category-item span {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+/*---------------------
+  GAME EXPERIENCE
+-----------------------*/
+        .game-banner {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #000, #222);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 85%;
+            justify-content: space-between;
+            height: 60vh;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        .game-text-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .game-text-content h2 {
+            font-size: 3em;
+            color: white;
+        }
+        .game-text-content p {
+            color: #db4444;
+            font-weight: bold;
+        }
+        .game-timer {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+        .game-timer div {
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 100%;
+            text-align: center;
+        }
+        .game-btn {
+            background: #db4444;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .game-btn:hover {
+            color: #E07575;
+        }
+        .game-image-content img {
+            max-height: 380px;
+            max-width: auto;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+@media (max-width: 768px) {
+    .genshin-banner {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+    }
+    
+    .text-content {
+      padding-left: 0;
+    }
+  }
+  
+</style>

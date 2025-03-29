@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || About Us')
+@section('title','Otaku Haven || About Us')
 
 @section('main-content')
 
@@ -30,8 +30,8 @@
 							@php
 								$settings=DB::table('settings')->get();
 							@endphp
-							<h3>Welcome To <span>Eshop</span></h3>
-							<p>@foreach($settings as $data) {{$data->description}} @endforeach</p>
+							<h3>Welcome To <span>Otaku Haven</span></h3>
+							<p>@foreach($settings as $data) {{ strip_tags($data->description) }} @endforeach</p>
 							<div class="button">
 								<a href="{{route('blog')}}" class="btn">Our Blog</a>
 								<a href="{{route('contact')}}" class="btn primary">Contact Us</a>
@@ -61,7 +61,7 @@
 					<div class="single-service">
 						<i class="ti-rocket"></i>
 						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
+						<p>Orders over P500</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -96,6 +96,10 @@
 		</div>
 	</section>
 	<!-- End Shop Services Area -->
-
-	@include('frontend.layouts.newsletter')
 @endsection
+
+<style>
+	.footer{
+		margin-top: 100px;
+	}
+</style>

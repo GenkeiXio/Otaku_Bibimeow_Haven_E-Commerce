@@ -1,4 +1,4 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="background-color: #4e73df !important; background-image: linear-gradient(180deg, #4e73df 10%, #3a5bbc 100%) !important;" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
@@ -21,13 +21,13 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
+    <!-- Heading
     <div class="sidebar-heading">
         Banner
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <!-- Nav Item - Charts -->
+     Nav Item - Pages Collapse Menu
+    Nav Item - Charts 
     <li class="nav-item">
         <a class="nav-link" href="{{route('file-manager')}}">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -46,7 +46,8 @@
           <a class="collapse-item" href="{{route('banner.create')}}">Add Banners</a>
         </div>
       </div>
-    </li>
+    </li> -->
+    
     <!-- Divider -->
     <hr class="sidebar-divider">
         <!-- Heading -->

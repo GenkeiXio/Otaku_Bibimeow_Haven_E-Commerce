@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-SHOP || PRODUCT PAGE')
+@section('title','Otaku Haven || PRODUCT PAGE')
 
 @section('main-content')
 	<!-- Breadcrumbs -->
@@ -11,7 +11,7 @@
                     <div class="bread-inner">
                         <ul class="bread-list">
                             <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.html">Shop Grid</a></li>
+                            <li class="active"><a href="blog-single.html">Shop</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                                                 @endphp
                                                 <div id="slider-range" data-min="0" data-max="{{$max}}"></div>
                                                 <div class="product_filter">
-                                                <button type="submit" class="filter_button">Filter</button>
+                                                <button type="submit" style="background: #db4444;" class="filter_button">Filter</button>
                                                 <div class="label-input">
                                                     <span>Range:</span>
                                                     <input style="" type="text" id="amount" readonly/>
@@ -84,32 +84,7 @@
 
                                     </div>
                                     <!--/ End Shop By Price -->
-                                <!-- Single Widget -->
-                                <div class="single-widget recent-post">
-                                    <h3 class="title">Recent post</h3>
-                                    {{-- {{dd($recent_products)}} --}}
-                                    @foreach($recent_products as $product)
-                                        <!-- Single Post -->
-                                        @php
-                                            $photo=explode(',',$product->photo);
-                                        @endphp
-                                        <div class="single-post first">
-                                            <div class="image">
-                                                <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                            </div>
-                                            <div class="content">
-                                                <h5><a href="{{route('product-detail',$product->slug)}}">{{$product->title}}</a></h5>
-                                                @php
-                                                    $org=($product->price-($product->price*$product->discount)/100);
-                                                @endphp
-                                                <p class="price"><del class="text-muted">₱{{number_format($product->price,2)}}</del>   ₱{{number_format($org,2)}}  </p>
 
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post -->
-                                    @endforeach
-                                </div>
-                                <!--/ End Single Widget -->
                                 <!-- Single Widget -->
                                 <div class="single-widget category">
                                     <h3 class="title">Brands</h3>
@@ -135,10 +110,10 @@
                                             <label>Show :</label>
                                             <select class="show" name="show" onchange="this.form.submit();">
                                                 <option value="">Default</option>
-                                                <option value="9" @if(!empty($_GET['show']) && $_GET['show']=='9') selected @endif>09</option>
+                                                <option value="5" @if(!empty($_GET['show']) && $_GET['show']=='5') selected @endif>05</option>
+                                                <option value="10" @if(!empty($_GET['show']) && $_GET['show']=='10') selected @endif>10</option>
                                                 <option value="15" @if(!empty($_GET['show']) && $_GET['show']=='15') selected @endif>15</option>
-                                                <option value="21" @if(!empty($_GET['show']) && $_GET['show']=='21') selected @endif>21</option>
-                                                <option value="30" @if(!empty($_GET['show']) && $_GET['show']=='30') selected @endif>30</option>
+                                                <option value="20" @if(!empty($_GET['show']) && $_GET['show']=='20') selected @endif>20</option>
                                             </select>
                                         </div>
                                         <div class="single-shorter">
@@ -199,17 +174,18 @@
                                     </div>
                                 @endforeach
                             @else
-                                    <h4 class="text-warning" style="margin:100px auto;">There are no products.</h4>
+                                    <h4 class="text-warning" style="margin:100px auto; color: #db4444 !important;">There are no products.</h4>
                             @endif
-
-
-
                         </div>
                         <div class="row">
-                            <div class="col-md-12 justify-content-center d-flex">
-                                {{$products->appends($_GET)->links()}}
+                            <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+                                <nav>
+                                    {{$products->appends($_GET)->links('pagination::bootstrap-4')}}
+                                     <!--/ {{$products->appends($_GET)->links()}}  -->
+                                     <!--/ {{$products->appends($_GET)->links('pagination::bootstrap-4')}}  -->
+                                </nav>
                             </div>
-                          </div>
+                        </div>
 
                     </div>
                 </div>
@@ -376,7 +352,7 @@
     .filter_button{
         /* height:20px; */
         text-align: center;
-        background:#F7941D;
+        background:#db4444;
         padding:8px 16px;
         margin-top:10px;
         color: white;
