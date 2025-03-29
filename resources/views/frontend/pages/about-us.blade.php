@@ -60,7 +60,7 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
-						<h4>Free shiping</h4>
+						<h4>Free shipping</h4>
 						<p>Orders over P500</p>
 					</div>
 					<!-- End Single Service -->
@@ -78,7 +78,7 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-lock"></i>
-						<h4>Sucure Payment</h4>
+						<h4>Secure Payment</h4>
 						<p>100% secure payment</p>
 					</div>
 					<!-- End Single Service -->
@@ -87,7 +87,7 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
+						<h4>Best Piece</h4>
 						<p>Guaranteed price</p>
 					</div>
 					<!-- End Single Service -->

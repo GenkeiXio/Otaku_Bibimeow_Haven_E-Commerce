@@ -2479,14 +2479,14 @@ fieldset[disabled] a.btn {
 
 .btn-success {
     color: #fff;
-    background-color: #28a745;
-    border-color: #28a745
+    background-color: #db4444;
+    border-color: #db4444;
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34
+    background-color: #e07575;
+    border-color: #e07575;
 }
 
 .btn-success.focus,
@@ -2496,16 +2496,16 @@ fieldset[disabled] a.btn {
 
 .btn-success.disabled,
 .btn-success:disabled {
-    background-color: #28a745;
-    border-color: #28a745
+    background-color: #db4444;
+    border-color: #db4444;
 }
 
 .btn-success:not([disabled]):not(.disabled).active,
 .btn-success:not([disabled]):not(.disabled):active,
 .show>.btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #1e7e34;
-    border-color: #1c7430;
+    background-color: #db4444;
+    border-color: #db4444;
     box-shadow: 0 0 0 .2rem rgba(40, 167, 69, .5)
 }
 
@@ -2543,14 +2543,14 @@ fieldset[disabled] a.btn {
 
 .btn-warning {
     color: #111;
-    background-color: #ffc107;
-    border-color: #ffc107
+    background-color: #db4444;
+    border-color: #db4444;
 }
 
 .btn-warning:hover {
     color: #111;
-    background-color: #e0a800;
-    border-color: #d39e00
+    background-color: #e07575;
+    border-color: #e07575;
 }
 
 .btn-warning.focus,
@@ -4763,9 +4763,9 @@ tbody.collapse.show {
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb
+    color: #e07575;
+    background-color: #db4444;
+    border-color: #db4444;
 }
 
 .alert-success hr {
@@ -4773,11 +4773,11 @@ tbody.collapse.show {
 }
 
 .alert-success .alert-link {
-    color: #0b2e13
+    color: #e07575;
 }
 
 .alert-info {
-    color: #0c5460;
+    color: #db4444;
     background-color: #d1ecf1;
     border-color: #bee5eb
 }
@@ -4791,7 +4791,7 @@ tbody.collapse.show {
 }
 
 .alert-warning {
-    color: #856404;
+    color: #db4444;
     background-color: #fff3cd;
     border-color: #ffeeba
 }
@@ -4801,7 +4801,7 @@ tbody.collapse.show {
 }
 
 .alert-warning .alert-link {
-    color: #533f03
+    color: #db4444;
 }
 
 .alert-danger {
