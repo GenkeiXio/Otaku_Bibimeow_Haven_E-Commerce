@@ -354,7 +354,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$product->title}}</a></h4>
-                                        <p class="price with-discount">₱{{number_format($product->discount,2)}}</p>
+                                        <p class="price with-discount">{{number_format($product->discount)}} %</p>
                                     </div>
                                 </div>
                                 </div>
@@ -378,7 +378,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-rocket"></i>
-                    <h4>Free shiping</h4>
+                    <h4>Free shipping</h4>
                     <p>Orders over P500</p>
                 </div>
                 <!-- End Single Service -->
@@ -396,7 +396,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-lock"></i>
-                    <h4>Sucure Payment</h4>
+                    <h4>Secure Payment</h4>
                     <p>100% secure payment</p>
                 </div>
                 <!-- End Single Service -->
@@ -405,7 +405,7 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-tag"></i>
-                    <h4>Best Peice</h4>
+                    <h4>Best Piece</h4>
                     <p>Guaranteed price</p>
                 </div>
                 <!-- End Single Service -->
@@ -473,7 +473,7 @@
                                                 @if($product->stock >0)
                                                 <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} in stock</span>
                                                 @else
-                                                <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} out stock</span>
+                                                <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} sold out</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -499,15 +499,6 @@
                                                             @endforeach
                                                         </select>
                                                     </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                         @endif
@@ -533,7 +524,7 @@
                                             </div>
                                             <div class="add-to-cart">
                                                 <button type="submit" class="btn">Add to cart</button>
-                                                <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
+                                                <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min" style="background: transparent; color: black !important; " ><i class="ti-heart"></i></a>
                                             </div>
                                         </form>
                                         <div class="default-social">
@@ -655,6 +646,7 @@
 .footer {
     margin-top: 100px;
 }
+
 /*---------------------
   CAROUSEL
 -----------------------*/
