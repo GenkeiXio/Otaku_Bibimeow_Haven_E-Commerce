@@ -79,7 +79,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$shippings->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$shippings->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No shippings found!!! Please create shipping</h6>
         @endif

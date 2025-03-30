@@ -77,7 +77,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$reviews->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$reviews->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No reviews found!!!</h6>
         @endif

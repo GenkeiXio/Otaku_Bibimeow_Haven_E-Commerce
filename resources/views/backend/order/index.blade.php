@@ -78,7 +78,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$orders->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$orders->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No orders found!!! Please order some products</h6>
         @endif

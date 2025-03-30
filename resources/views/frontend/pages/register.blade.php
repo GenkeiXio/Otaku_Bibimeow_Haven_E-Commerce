@@ -73,7 +73,7 @@
                                         <button class="btn" type="submit">Register</button>
                                         <a href="{{route('login.form')}}" class="btn">Login</a>
                                         OR
-                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook" style="background-color: #4267B2;" ><i class="ti-facebook"></i></a>
+                                        <!--/<a href="#" class="btn btn-facebook" style="background-color: #4267B2;" ><i class="ti-facebook"></i></a> -->
                                         <a href="{{route('login.redirect','google')}}" class="btn btn-google" style="background-color: #DC4A38;"><i class="ti-google"></i></a>
                                     </div>
                                 </div>
