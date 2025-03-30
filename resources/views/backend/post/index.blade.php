@@ -86,7 +86,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$posts->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$posts->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No posts found!!! Please create Post</h6>
         @endif

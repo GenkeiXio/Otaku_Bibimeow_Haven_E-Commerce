@@ -225,7 +225,7 @@
                                                 <option value="MM">Myanmar [Burma]</option>
                                                 <option value="NA">Namibia</option>
                                                 <option value="NR">Nauru</option>
-                                                <option value="NP" selected="selected">Nepal</option>
+                                                <option value="NP">Nepal</option>
                                                 <option value="NL">Netherlands</option>
                                                 <option value="AN">Netherlands Antilles</option>
                                                 <option value="NC">New Caledonia</option>
@@ -246,7 +246,7 @@
                                                 <option value="PG">Papua New Guinea</option>
                                                 <option value="PY">Paraguay</option>
                                                 <option value="PE">Peru</option>
-                                                <option value="PH">Philippines</option>
+                                                <option value="PH" selected="selected">Philippines</option>
                                                 <option value="PN">Pitcairn Islands</option>
                                                 <option value="PL">Poland</option>
                                                 <option value="PT">Portugal</option>
@@ -518,7 +518,7 @@
 			margin-bottom:0 !important;
 		}
 		.list li:hover{
-			background:#F7941D !important;
+			background:#e07575 !important;
 			color:white !important;
 		}
 		.form-select .nice-select::after {

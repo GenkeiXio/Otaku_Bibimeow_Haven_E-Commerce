@@ -109,7 +109,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$products->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$products->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No Products found!!! Please create Product</h6>
         @endif
@@ -147,7 +153,6 @@
   <script>
 
       $('#product-dataTable').DataTable( {
-        "scrollX": false
             "columnDefs":[
                 {
                     "orderable":false,
