@@ -6,6 +6,7 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Order;
 use DB;
 
 class PaypalController extends Controller
@@ -84,11 +85,23 @@ class PaypalController extends Controller
         $response = $provider->capturePaymentOrder($request->token);
 
         if (isset($response['status']) && $response['status'] == 'COMPLETED') {
-            request()->session()->flash('success', 'Payment successful!');
+            // Retrieve the order from the database (Assuming it's stored before redirecting to PayPal)
+            $order = Order::where('user_id', auth()->user()->id)->latest()->first();
+
+            if (!$order) {
+                return redirect()->route('home')->with('error', 'Order not found.');
+            }
+
+            // Mark the order as paid
+            $order->payment_status = 'paid';
+            $order->save();
+
+            // Clear the cart after successful payment
             session()->forget('cart');
             session()->forget('coupon');
+            Cart::where('user_id', auth()->user()->id)->delete();
 
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success', 'Payment successful, order placed!');
         }
 
         return redirect()->route('payment.cancel')->with('error', 'Payment failed.');
