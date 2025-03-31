@@ -126,7 +126,7 @@
     Route::post('/coupon-store', [CouponController::class, 'couponStore'])->name('coupon-store');
 // Payment
     Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
-    Route::get('cancel', [PayPalController::class, 'cancel'])->name('payment.cancel');
+    Route::get('payment/cancel', [PayPalController::class, 'cancel'])->name('payment.cancel');
     Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
 
 

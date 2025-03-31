@@ -5062,9 +5062,9 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-success {
-  color: #0f6848;
-  background-color: #d2f4e8;
-  border-color: #bff0de;
+  color: white !important;
+  background-color: #db4444 !important;
+  border-color: #db4444 !important;
 }
 
 .alert-success hr {

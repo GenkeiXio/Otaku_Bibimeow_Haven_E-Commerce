@@ -72,12 +72,6 @@
                 <div class="col-lg-8 col-md-7 col-12">
                     <div class="search-bar-top">
                         <div class="search-bar" style="color: #db4444;">
-                            <select>
-                                <option >All Category</option>
-                                @foreach(Helper::getAllCategory() as $cat)
-                                    <option>{{$cat->title}}</option>
-                                @endforeach
-                            </select>
                             <form method="POST" action="{{route('product.search')}}">
                                 @csrf
                                 <input name="search" placeholder="Search Products Here....." type="search">
@@ -736,7 +730,7 @@
 	font-size: 14px;
 	font-weight: 400;
 	padding: 0 25px 0 20px;
-	width: 328px;
+	width: 535px;
 }
 .header.shop .search-bar .btnn {
 	height: 50px;

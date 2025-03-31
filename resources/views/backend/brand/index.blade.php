@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','E-SHOP || Brand Page')
+@section('title','Otaku Haven || Brand Page')
 @section('main-content')
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -79,7 +79,13 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$brands->links()}}</span>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center" style="color: #db4444;">
+            <nav>
+              {{$brands->links('pagination::bootstrap-4')}}
+            </nav>
+          </div>
+        </div>
         @else
           <h6 class="text-center">No brands found!!! Please create brand</h6>
         @endif

@@ -225,7 +225,7 @@
                                                 <option value="MM">Myanmar [Burma]</option>
                                                 <option value="NA">Namibia</option>
                                                 <option value="NR">Nauru</option>
-                                                <option value="NP" selected="selected">Nepal</option>
+                                                <option value="NP">Nepal</option>
                                                 <option value="NL">Netherlands</option>
                                                 <option value="AN">Netherlands Antilles</option>
                                                 <option value="NC">New Caledonia</option>
@@ -246,7 +246,7 @@
                                                 <option value="PG">Papua New Guinea</option>
                                                 <option value="PY">Paraguay</option>
                                                 <option value="PE">Peru</option>
-                                                <option value="PH">Philippines</option>
+                                                <option value="PH" selected="selected">Philippines</option>
                                                 <option value="PN">Pitcairn Islands</option>
                                                 <option value="PL">Poland</option>
                                                 <option value="PT">Portugal</option>
@@ -441,8 +441,8 @@
                     <!-- Start Single Service -->
                     <div class="single-service">
                         <i class="ti-rocket"></i>
-                        <h4>Free shiping</h4>
-                        <p>Orders over $100</p>
+                        <h4>Free shipping</h4>
+                        <p>Orders over P500</p>
                     </div>
                     <!-- End Single Service -->
                 </div>
@@ -459,7 +459,7 @@
                     <!-- Start Single Service -->
                     <div class="single-service">
                         <i class="ti-lock"></i>
-                        <h4>Sucure Payment</h4>
+                        <h4>Secure Payment</h4>
                         <p>100% secure payment</p>
                     </div>
                     <!-- End Single Service -->
@@ -468,7 +468,7 @@
                     <!-- Start Single Service -->
                     <div class="single-service">
                         <i class="ti-tag"></i>
-                        <h4>Best Peice</h4>
+                        <h4>Best Piece</h4>
                         <p>Guaranteed price</p>
                     </div>
                     <!-- End Single Service -->
@@ -518,7 +518,7 @@
 			margin-bottom:0 !important;
 		}
 		.list li:hover{
-			background:#F7941D !important;
+			background:#e07575 !important;
 			color:white !important;
 		}
 		.form-select .nice-select::after {
