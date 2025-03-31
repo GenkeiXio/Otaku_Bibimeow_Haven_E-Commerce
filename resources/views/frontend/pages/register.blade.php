@@ -69,12 +69,13 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-group login-btn">
+                                    <div class="form-group login-btn d-flex align-items-center justify-content-center gap-3">
                                         <button class="btn" type="submit">Register</button>
                                         <a href="{{route('login.form')}}" class="btn">Login</a>
                                         OR
-                                        <!--/<a href="#" class="btn btn-facebook" style="background-color: #4267B2;" ><i class="ti-facebook"></i></a> -->
-                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google" style="background-color: #DC4A38;"><i class="ti-google"></i></a>
+                                        <a href="{{route('login.redirect','google')}}" class="btn-google">
+                                            <img src="{{ asset('frontend/img/logo/google-logo.png') }}" alt="Google Logo"> Sign in with Google
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -102,15 +103,37 @@
     .btn-facebook:hover{
         background:#073088 !important;
     }
-    .btn-google{
-        background-color: #DC4A38;
-        color:white;
-        padding-left: 60px !important;
-        padding-right: 60px !important;
-        justify-content: center;
+    .login-btn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-    .btn-google:hover{
-        background:rgb(243, 26, 26) !important;
+    .btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    width: auto;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+    }
+
+    .btn-google img {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+    .btn-google:hover {
+        background-color: transparent;
     }
 </style>
 @endpush
