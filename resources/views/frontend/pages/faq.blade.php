@@ -51,7 +51,7 @@
             <div class="faq-item">
                 <button class="faq-question">What payment methods do you accept?</button>
                 <div class="faq-answer">
-                    <p>We accept various payment methods including Gcash, Paymaya, and other secure payment gateways to ensure a smooth shopping experience.</p>
+                    <p>We accept various payment methods including paypal and cash on delivery to ensure a smooth shopping experience.</p>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
             <div class="faq-item">
                 <button class="faq-question">How can I track my order?</button>
                 <div class="faq-answer">
-                    <p>Once your order is shipped, we will send you a tracking number via email so you can monitor your package’s delivery status.</p>
+                    <p>Once your order is shipped, we will send you a tracking number so you can monitor your package’s delivery status.</p>
                 </div>
             </div>
 

@@ -69,6 +69,9 @@
     Route::get('/home', [FrontendController::class, 'index']);
     Route::get('/about-us', [FrontendController::class, 'aboutUs'])->name('about-us');
     Route::get('/faq', [FrontendController::class, 'FAQ'])->name('faq');
+    Route::get('/shipping', [FrontendController::class, 'Shipping'])->name('shipping');
+    Route::get('/refund', [FrontendController::class, 'Refund'])->name('refund');
+    Route::get('/discount', [FrontendController::class, 'Discount'])->name('discount');
     Route::get('/terms', [FrontendController::class, 'Terms'])->name('terms');
     Route::get('/privacy', [FrontendController::class, 'Privacy'])->name('privacy');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
