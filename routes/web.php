@@ -216,3 +216,19 @@
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
         Lfm::routes();
     });
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard'); // make sure this blade file exists
+        })->name('dashboard');
+    
+        Route::post('/add-to-cart', [CartController::class, 'store'])->name('cart.store');
+        Route::post('/add-to-wishlist', [WishlistController::class, 'store'])->name('wishlist.store');
+    });
+
+    Route::get('/test-auth', function () {
+        return Auth::check() ? 'User is logged in' : 'User is not logged in';
+    });
+
+    Route::post('/single-add-to-cart', [CartController::class, 'singleAddToCart'])->name('single-add-to-cart');
+    

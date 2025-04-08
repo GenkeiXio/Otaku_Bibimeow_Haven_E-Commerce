@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /*
@@ -52,23 +52,54 @@ class LoginController extends Controller
     }
  
     public function Callback($provider)
-    {
-        $userSocial =   Socialite::driver($provider)->stateless()->user();
-        $users      =   User::where(['email' => $userSocial->getEmail()])->first();
-        // dd($users);
-        if($users){
-            Auth::login($users);
-            return redirect('/')->with('success','You are login from '.$provider);
-        }else{
-            $user = User::create([
-                'name'          => $userSocial->getName(),
-                'email'         => $userSocial->getEmail(),
-                'image'         => $userSocial->getAvatar(),
-                'provider_id'   => $userSocial->getId(),
-                'provider'      => $provider,
-            ]);
+{
+    $userSocial = Socialite::driver($provider)->stateless()->user();
+    $existingUser = User::where('email', $userSocial->getEmail())->first();
 
-         return redirect()->route('home');
-        }
+    if ($existingUser) {
+        Auth::login($existingUser);
+        return redirect('/')->with('success', 'You are logged in using ' . ucfirst($provider));
+    } else {
+        // Store the user data in session and redirect to registration page
+        session([
+            'social_user' => [
+                'name' => $userSocial->getName(),
+                'email' => $userSocial->getEmail(),
+                'provider_id' => $userSocial->getId(),
+                'provider' => $provider,
+                'avatar' => $userSocial->getAvatar(),
+            ]
+        ]);
+        return redirect()->route('register.form');
     }
+}
+
+public function handleGoogleCallback()
+{
+    $googleUser = Socialite::driver('google')->stateless()->user();
+
+    $user = User::where('email', $googleUser->getEmail())->first();
+
+    if (!$user) {
+        $user = User::create([
+            'name' => $googleUser->getName(),
+            'email' => $googleUser->getEmail(),
+            'google_id' => $googleUser->getId(),
+            'password' => bcrypt('123456dummy'),
+            'role' => 'user', // <- add this
+            'status' => 'active', // <- add this
+        ]);
+    } elseif (!$user->role || !$user->status) {
+        // In case user exists but role or status is missing
+        $user->update([
+            'role' => $user->role ?? 'user',
+            'status' => $user->status ?? 'active',
+        ]);
+    }
+
+    Auth::login($user);
+
+    return redirect('/')->with('success', 'You are logged in with Google');
+}
+
 }
