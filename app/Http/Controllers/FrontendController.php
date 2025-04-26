@@ -48,6 +48,18 @@ class FrontendController extends Controller
         return view('frontend.pages.faq');
     }
 
+    public function Shipping(){
+        return view('frontend.pages.shipping');
+    }
+
+    public function Refund(){
+        return view('frontend.pages.refund');
+    }
+
+    public function Discount(){
+        return view('frontend.pages.discount');
+    }
+
     public function Terms(){
         return view('frontend.pages.terms');
     }

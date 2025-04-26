@@ -69,6 +69,9 @@
     Route::get('/home', [FrontendController::class, 'index']);
     Route::get('/about-us', [FrontendController::class, 'aboutUs'])->name('about-us');
     Route::get('/faq', [FrontendController::class, 'FAQ'])->name('faq');
+    Route::get('/shipping', [FrontendController::class, 'Shipping'])->name('shipping');
+    Route::get('/refund', [FrontendController::class, 'Refund'])->name('refund');
+    Route::get('/discount', [FrontendController::class, 'Discount'])->name('discount');
     Route::get('/terms', [FrontendController::class, 'Terms'])->name('terms');
     Route::get('/privacy', [FrontendController::class, 'Privacy'])->name('privacy');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
@@ -213,3 +216,19 @@
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
         Lfm::routes();
     });
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard'); // make sure this blade file exists
+        })->name('dashboard');
+    
+        Route::post('/add-to-cart', [CartController::class, 'store'])->name('cart.store');
+        Route::post('/add-to-wishlist', [WishlistController::class, 'store'])->name('wishlist.store');
+    });
+
+    Route::get('/test-auth', function () {
+        return Auth::check() ? 'User is logged in' : 'User is not logged in';
+    });
+
+    Route::post('/single-add-to-cart', [CartController::class, 'singleAddToCart'])->name('single-add-to-cart');
+    
