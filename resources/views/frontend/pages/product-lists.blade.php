@@ -123,6 +123,7 @@
 									<!-- Shop Top -->
 									<div class="shop-top">
 										<div class="shop-shorter">
+											<!--
 											<div class="single-shorter">
 												<label>Show :</label>
 												<select class="show" name="show" onchange="this.form.submit();">
@@ -133,6 +134,7 @@
 													<option value="20" @if(!empty($_GET['show']) && $_GET['show']=='20') selected @endif>20</option>
 												</select>
 											</div>
+											 -->
 											<div class="single-shorter">
 												<label>Sort By :</label>
 												<select class='sortBy' name='sortBy' onchange="this.form.submit();">
@@ -145,7 +147,7 @@
 											</div>
 										</div>
 										<ul class="view-mode">
-											<li><a href="{{route('product-grids')}}"><i class="fa fa-th-large"></i></a></li>
+											
 											<li class="active"><a href="javascript:void(0)"><i class="fa fa-th-list"></i></a></li>
 										</ul>
 									</div>

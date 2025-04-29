@@ -142,9 +142,26 @@
 @endsection
 @push('styles')
     <style>
-        .pagination{
-            display:inline-flex;
-        }
+.pagination{
+    display:inline-flex;
+}
+
+.more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #db4444;
+  color: #ffff !important;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.more-btn:hover {
+  background-color: #e07575;
+  color: #ffff;
+}
     </style>
 
 @endpush
