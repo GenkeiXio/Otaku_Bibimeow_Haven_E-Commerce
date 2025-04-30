@@ -197,7 +197,8 @@
 														{{-- <p>{!! html_entity_decode($product->summary) !!}</p> --}}
 														</div>
 														<p class="des pt-2">{!! html_entity_decode($product->summary) !!}</p>
-														<a href="javascript:void(0)" class="btn cart" data-id="{{$product->id}}">Buy Now!</a>
+														
+														<a href="{{route('add-to-cart',$product->slug)}}" class="btn cart" data-id="{{$product->id}}">Add to Cart!</a>
 													</div>
 												</div>
 											</div>
