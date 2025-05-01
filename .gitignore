@@ -4,7 +4,7 @@
 /storage/*
 /storage/*
 !/storage/app
-
+.env
 /vendor
 .env.backup
 .phpunit.result.cache

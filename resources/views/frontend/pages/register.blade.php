@@ -69,13 +69,9 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="form-group login-btn d-flex align-items-center justify-content-center gap-3">
+                                    <div class="form-group login-btn d-flex align-items-center justify-content-center gap-10">
                                         <button class="btn" type="submit">Register</button>
                                         <a href="{{route('login.form')}}" class="btn">Login</a>
-                                        OR
-                                        <a href="{{route('login.redirect','google')}}" class="btn-google">
-                                            <img src="{{ asset('frontend/img/logo/google-logo.png') }}" alt="Google Logo"> Sign in with Google
-                                        </a>
                                     </div>
                                 </div>
                             </div>

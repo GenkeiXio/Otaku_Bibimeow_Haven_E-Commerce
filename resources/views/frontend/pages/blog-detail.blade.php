@@ -169,16 +169,6 @@
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
                         <!--/ End Single Widget -->
-                        <!-- Single Widget -->
-                        <div class="single-widget side-tags">
-                            <h3 class="title">Tags</h3>
-                            <ul class="tag">
-                                @foreach(Helper::postTagList('posts') as $tag)
-                                    <li><a href="">{{$tag->title}}</a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <!--/ End Single Widget -->
 
                     </div>
                 </div>
